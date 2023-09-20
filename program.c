@@ -12,5 +12,16 @@ void main() {
     printf("Choose a number, please: ");
     scanf("%d", &kick);
     printf("the number chosen was %d\n", kick);    
+    
+    if (kick == secret_number) {
+        printf("Congratulations, You Right!!!\n");
+    } else {
+	if (kick > secret_number) {
+	    printf("Your number is bigger than secret number");
+	}
 
+	if (kick < secret_number) {
+	    printf("Your number is smaller than secret number");
+	}
+    }
 }
