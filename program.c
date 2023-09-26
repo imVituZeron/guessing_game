@@ -19,18 +19,13 @@ void main() {
         
         int right = (kick == secret_number);
         int bigger = (kick > secret_number);
-        int smaller = (kick < secret_number);
 
         if (right) {
             printf("Congratulations, You Right!!!\n");
             break;
-        }
-        
-        if (bigger) {
+        } else if (bigger) {
             printf("Your number is bigger than secret number\n");
-        }
-
-        if (smaller) {
+        } else {
             printf("Your number is smaller than secret number\n");
         }
     }
