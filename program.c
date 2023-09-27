@@ -1,8 +1,5 @@
 #include <stdio.h>
 
-//constant
-#define FINAL_NUMBER 5
-
 void main() {
     printf("***************************\n");
     printf("* Welcome to the Our Game *\n");
@@ -10,12 +7,18 @@ void main() {
 
     int kick;
     int secret_number = 42;
+    int attempt = 1;
 
-    for (int i=1; i<=FINAL_NUMBER; i++) {
-        printf("Attempt %d of %d\n", i, FINAL_NUMBER);
+    while (1) {
+        printf("Attempt %d\n", attempt);
         printf("Choose a number, please: ");
         scanf("%d", &kick);
-        printf("the number chosen was %d\n", kick);    
+        printf("the number chosen was %d\n", kick);
+
+        if (kick < 0) {
+            printf("Invalidate negative numbers!\n");
+            continue;
+        }
         
         int right = (kick == secret_number);
         int bigger = (kick > secret_number);
@@ -28,6 +31,9 @@ void main() {
         } else {
             printf("Your number is smaller than secret number\n");
         }
+
+        attempt++;
     }
     printf("Game Over\n");
+    printf("You got it right in %d attempts\n", attempt);
 }
