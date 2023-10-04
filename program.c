@@ -9,6 +9,8 @@ void main() {
     int secret_number = 42;
     int attempt = 1;
 
+    int points = 1000;
+
     while (1) {
         printf("Attempt %d\n", attempt);
         printf("Choose a number, please: ");
@@ -33,7 +35,10 @@ void main() {
         }
 
         attempt++;
+        int negative_points = (kick - secret_number) / 2;
+        points = points - negative_points;
     }
     printf("Game Over\n");
     printf("You got it right in %d attempts\n", attempt);
+    printf("Points: %d\n", points);
 }
